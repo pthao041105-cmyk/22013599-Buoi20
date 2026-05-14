@@ -1,33 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
+    <title>Đăng nhập</title>
 </head>
 <body>
-    <h1>ĐĂNG NHẬP</h1>
 
-    @if(session('error'))
-        <p style="color:red">
-            {{ session('error') }}
-        </p>
-    @endif
+<h1>ĐĂNG NHẬP</h1>
 
-    <form method="POST" action="{{ url('/login') }}">
-        @csrf
+@if(session('success'))
+    <p style="color:green">
+        {{ session('success') }}
+    </p>
+@endif
 
-        <div>Username</div>
-        <input type="text" name="username">
+@if(session('error'))
+    <p style="color:red">
+        {{ session('error') }}
+    </p>
+@endif
 
-        <br><br>
+<form method="POST" action="{{ url('/login') }}">
 
-        <div>Password</div>
-        <input type="password" name="password">
+    @csrf
 
-        <br><br>
+    <div>
+        Tên người dùng
+    </div>
 
-        <button type="submit">
-            Login
-        </button>
-    </form>
+    <input type="text" name="username">
+
+    <br><br>
+
+    <div>
+        Mật khẩu
+    </div>
+
+    <input type="password" name="password">
+
+    <br><br>
+
+    <button type="submit">
+        Đăng nhập
+    </button>
+
+</form>
+
+<br>
+
+<a href="{{ url('/register') }}">
+    Chưa có tài khoản? Đăng ký
+</a>
+
 </body>
 </html>

@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Home</title>
+    <title>Trang chủ</title>
 </head>
 <body>
-    <h1>TRANG CHỦ</h1>
 
-    <a href="{{ url('/login') }}">
-        Đăng nhập
-    </a>
+<h1>TRANG CHỦ</h1>
+
+<a href="{{ url('/login') }}">
+    Đăng nhập
+</a>
+
+<br><br>
+
+<a href="{{ url('/register') }}">
+    Đăng ký
+</a>
+
 </body>
 </html>
